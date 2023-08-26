@@ -11,6 +11,7 @@ body {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 100vh;
+  background-attachment:fixed;
 }
 
 code {
@@ -33,7 +34,7 @@ code {
 
 .navbar h2 {
   font-weight: bold;
-  color: #FFA4A4;
+  color: #E4C04D;
   font-size: 30px;
 }
 
@@ -48,4 +49,47 @@ code {
   color: #E4C04D;
   text-shadow: 4px 1px black;
   transition: 0.7s;
+}
+.title{
+  text-align: center;
+  font-size: 75px;
+  font-weight: bolder;
+  color:#E4C04D;
+  text-shadow: 3px 3px 2px black;
+  margin: 40px;
+
+}
+.details{
+  text-align: center;
+  font-size: 50px;
+  color:#E4C04D;
+  margin: 100px;
+
+}
+
+.create{
+  display: flex;
+  justify-content: space-around;
+}
+
+.items{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.create img {
+  width: 200px;
+  height: 250px;
+  border-radius: 20px;
+}
+
+.items button{
+  border-radius: 15px;
+  background-color:#6998AB;
+  padding: 5px;
+  border-width: 0;
+  color: white;
+  margin: 20px;
 }
