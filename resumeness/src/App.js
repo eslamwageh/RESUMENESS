@@ -5,11 +5,9 @@ function App() {
   return (
     <Router>
         <div className="App">
-        <h2> ashraf </h2>
-        <Routes>
-          <Route exact path = "/" element = {<Navbar />}></Route>
-        </Routes>
-        
+          <Routes>
+            <Route exact path = "/" element = {<Navbar />}></Route>
+          </Routes>
         </div>
     </Router> 
   );
