@@ -1,6 +1,6 @@
 const Home = () => {
     return (
-        <div>
+        <div className="home">
         <div className="title">RESUMENESS</div>
         <div className="details">Build Your CV With One Click!</div>;
         <div className="create">

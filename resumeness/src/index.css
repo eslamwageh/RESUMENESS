@@ -93,3 +93,60 @@ code {
   color: white;
   margin: 20px;
 }
+
+.preview{
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 500px;
+  height: 600px;
+  color: white;
+  font-size: x-small;
+}
+
+.preview p{
+  margin: 0;
+}
+
+.left-part{
+  background-color: rgb(40, 39, 39);
+  padding: 100px 0px 10px 0px;
+  text-align: center;
+}
+
+.left-part hr{
+  border: 1px solid rgb(255, 208, 0);
+  margin-left: 30px;
+}
+
+.left-part h2{
+  margin-top: 40px;
+}
+
+.right-part{
+  background-color: white;
+}
+
+.degree{
+  text-align: left;
+  margin-left: 50px;
+}
+
+.contacts{
+  margin-top: 90px;
+}
+
+.contact{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+}
+
+.mark{
+  background-color: rgb(255, 208, 0);
+  border-radius: 0 5px 5px 0;
+}
+
+.type{
+  background-color: rgb(56, 55, 55);
+}
