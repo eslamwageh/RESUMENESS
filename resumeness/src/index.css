@@ -93,3 +93,63 @@ code {
   color: white;
   margin: 20px;
 }
+
+label{
+  display: block;
+  margin: 10px;
+  font-weight:900;
+  font-size: 30px;
+}
+
+input {
+  border-radius: 5px;
+  border-width: 0;
+  box-shadow: 1px 2px gray;
+  height: 30px;
+  width: 80%;
+  background-color: rgb(255, 255, 255);
+  font-size: 20px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.boxes {
+  width: 900px;
+  text-align: left;
+  margin: auto;
+  border-radius: 10px;
+  padding: 25px;
+  background-size: 100% 100%;
+  background-image: url('../public/Photos/cafe2.jpg');
+  margin-top: 50px;
+  padding-bottom: 50px;
+  padding-top: 35px;
+}
+
+h1{
+  margin: 0;
+  font-size: 40px;
+  text-align: center;
+}
+
+li{
+  font-weight:900;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+ol{
+  margin: 0;
+  padding: 0;
+}
+
+.inner{
+  margin: auto ;
+  padding-left: 50px;
+}
+
+textarea{
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+}
