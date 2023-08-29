@@ -94,12 +94,7 @@ code {
   margin: 20px;
 }
 
-label{
-  display: block;
-  margin: 10px;
-  font-weight:900;
-  font-size: 30px;
-}
+
 
 input {
   border-radius: 5px;
@@ -282,4 +277,58 @@ progress::-webkit-progress-bar {
 }
 progress::-webkit-progress-value {
    background-color: rgb(30, 30, 30);
+}
+
+label{
+  display: block;
+  font-weight:900;
+  font-size: 30px;
+}
+
+.smallinput {
+  width: 80%;
+  margin: 10px;
+}
+
+.work {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 1fr;
+}
+
+#widefield {
+  grid-column: span 2;
+}
+
+.inner button {
+  margin-top :30px;
+  border-radius: 30px;
+  border-width: 0;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 15px;
+  background-color:#6998AB;
+  /* float: right;
+  box-sizing: border-box;
+  width: 250px; */
+  /* box-sizing: border-box; */
+}
+
+/* .inner{
+  display: flex;
+  flex-direction: column;
+} */
+
+.rightflex {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#freetextarea{
+  margin-left: 60px;
+}
+
+.inner h2 {
+  font-size: 30px;
+  margin-left: 6px;
 }

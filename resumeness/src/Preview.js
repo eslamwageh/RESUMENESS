@@ -1,12 +1,18 @@
-const Preview = (probs) => {
-    const info = probs.info;
+import { useLocation } from "react-router-dom";
+
+const Preview = () => {
+    const location = useLocation();
+    const { name, address } = location.state;
+    console.log(location)
+    //const { name, address } = location.state || {};
+
     return (
         <div className="preview">
             <div className="left-part">
                 <h2>EDUCATION</h2>
                 <hr />
                 <div className="degree">
-                    <h3>info.degree</h3>
+                    <h3>{address}</h3>
                     <p>info.college</p>
                     <p>info.grad-date</p>
                 </div>
@@ -41,7 +47,7 @@ const Preview = (probs) => {
             </div>
             <div className="right-part">
                 <div className="cv-title">
-                    <h1>INFO.NAME</h1>
+                    <h1>{name}</h1>
                     <h3>INFO.PROF TITLE</h3>
                 </div>
                 <div className="right-body">
