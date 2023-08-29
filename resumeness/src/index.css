@@ -94,6 +94,116 @@ code {
   margin: 20px;
 }
 
+
+
+input {
+  border-radius: 5px;
+  border-width: 0;
+  box-shadow: 1px 2px gray;
+  height: 30px;
+  width: 80%;
+  background-color: rgb(255, 255, 255);
+  font-size: 20px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.boxes {
+  width: 900px;
+  text-align: left;
+  margin: auto;
+  border-radius: 10px;
+  padding: 25px;
+  background-size: 100% 100%;
+  background-image: url('../public/Photos/cafe2.jpg');
+  margin-top: 50px;
+  padding-bottom: 50px;
+  padding-top: 35px;
+}
+
+h1{
+  margin: 0;
+  font-size: 40px;
+  text-align: center;
+}
+
+li{
+  font-weight:900;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+ol{
+  margin: 0;
+  padding: 0;
+}
+
+.inner{
+  margin: auto ;
+  padding-left: 50px;
+}
+
+textarea{
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+}
+
+
+
+input {
+  border-radius: 5px;
+  border-width: 0;
+  box-shadow: 1px 2px gray;
+  height: 30px;
+  width: 80%;
+  background-color: rgb(255, 255, 255);
+  font-size: 20px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.boxes {
+  width: 900px;
+  text-align: left;
+  margin: auto;
+  border-radius: 10px;
+  padding: 25px;
+  background-size: 100% 100%;
+  background-image: url('../public/Photos/cafe2.jpg');
+  margin-top: 50px;
+  padding-bottom: 50px;
+  padding-top: 35px;
+}
+
+h1{
+  margin: 0;
+  font-size: 40px;
+  text-align: center;
+}
+
+li{
+  font-weight:900;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+ol{
+  margin: 0;
+  padding: 0;
+}
+
+.inner{
+  margin: auto ;
+  padding-left: 50px;
+}
+
+textarea{
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+}
+
 .previewcv{
   margin: auto;
   display: grid;
@@ -229,6 +339,59 @@ progress::-webkit-progress-value {
   background-color: rgb(30, 30, 30);
 }
 
+label{
+  display: block;
+  font-weight:900;
+  font-size: 30px;
+}
+
+.smallinput {
+  width: 80%;
+  margin: 10px;
+}
+
+.work {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 1fr;
+}
+
+#widefield {
+  grid-column: span 2;
+}
+
+.inner button {
+  margin-top :30px;
+  border-radius: 30px;
+  border-width: 0;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 15px;
+  background-color:#6998AB;
+  /* float: right;
+  box-sizing: border-box;
+  width: 250px; */
+  /* box-sizing: border-box; */
+}
+
+/* .inner{
+  display: flex;
+  flex-direction: column;
+} */
+
+.rightflex {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#freetextarea{
+  margin-left: 60px;
+}
+
+.inner h2 {
+  font-size: 30px;
+  margin-left: 6px;
+}
 .preview button{
   width: 150px;
   height: 40px;

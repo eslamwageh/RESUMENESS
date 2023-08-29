@@ -1,11 +1,17 @@
-import {useRef} from "react";
-import html2canvas from 'html2canvas';
+import { useRef } from "react";
+import html2canvas from "html2canvas";
+import { useLocation } from "react-router-dom";
+
 const Preview = () => {
+    const location = useLocation();
+    const { name, address } = location.state;
+    console.log(location);
+    //const { name, address } = location.state || {};
 
     const cv = useRef();
     async function generatePDF() {
         const { jsPDF } = window.jspdf;
-        const doc = new jsPDF('p', 'pt');
+        const doc = new jsPDF("p", "pt");
         await html2canvas(cv.current, {
             width: 500,
             height: 800,

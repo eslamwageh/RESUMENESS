@@ -6,10 +6,9 @@ const Navbar = () => {
             <h2>RESUMENESS</h2>
             <div className="nav-pages">
                 <Link to='/'>Home</Link>
-                <Link to='/'>Resume</Link>
-                <Link to='/'>Cover Letter</Link>
-                <Link to='/'>About</Link>
-                <Link to='/preview'>About</Link>
+                <Link to='/Resume'>Resume</Link>
+                <Link to='/CoverLetter'>Cover Letter</Link>
+                <Link to='/About'>About</Link>
             </div>
         </div>
     );
