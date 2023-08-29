@@ -94,7 +94,7 @@ code {
   margin: 20px;
 }
 
-.preview{
+.previewcv{
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -103,6 +103,11 @@ code {
   font-size: x-small;
 }
 
+.preview{
+  display: flex;
+  flex-direction: column;
+  height: 800px;
+}
 .preview p{
   margin: 0;
 }
@@ -218,8 +223,24 @@ progress {
   height: 3px;
 }
 progress::-webkit-progress-bar {
-   background-color: rgb(160, 160, 160);
+  background-color: rgb(160, 160, 160);
 }
 progress::-webkit-progress-value {
-   background-color: rgb(30, 30, 30);
+  background-color: rgb(30, 30, 30);
+}
+
+.preview button{
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  margin: auto;
+  transition: 0.5s ease;
+  background-color: #80afd2;
+  color: white;
+}
+
+.preview button:hover{
+  transform: scale(1.1);
+  background-color: #4a83ae;
 }
