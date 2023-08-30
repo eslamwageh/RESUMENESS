@@ -6,12 +6,11 @@ const Resume = () => {
     const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate(-1);
         //    setTimeout(() => {        how to navigate back then to the reqired page ?
         const formData = new FormData(e.target);
         const values = Object.fromEntries(formData.entries());
         navigate("./Preview", {
-            state: { name: values.name, address: values.address },
+            state: values,
         });
         //   }, 1);
     };
