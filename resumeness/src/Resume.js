@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 const Resume = () => {
     const navigate = useNavigate();
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         navigate(-1);
@@ -15,6 +16,24 @@ const Resume = () => {
         });
         //   }, 1);
     };
+
+    const handleWorkDelete = () => {
+        let arr = [...inputFields];
+        arr.pop();
+        setInputFields(arr);
+    }
+
+    const handleEduDelete = () => {
+        let arr = [...eduinputFields];
+        arr.pop();
+        setEduInputFields(arr);
+    }
+
+    const handleSkillDelete = () => {
+        let arr = [...skillinputFields];
+        arr.pop();
+        setSkillInputFields(arr);
+    }
 
     const [inputFields, setInputFields] = useState([]);
 
@@ -33,6 +52,8 @@ const Resume = () => {
     const handleAddFieldSkill = () => {
         setSkillInputFields([...skillinputFields, ""]);
     };
+
+
     return (
         <form action="" className="form" onSubmit={handleSubmit}>
             <div className="boxes">
@@ -81,13 +102,14 @@ const Resume = () => {
                 <textarea
                     name="summary"
                     id="freetextarea"
-                    rows={3}
+                    rows={6}
                     cols={90}
                 ></textarea>
 
                 <div className="inner">
+
                     {inputFields.map((field, index) => (
-                        <div>
+                        <div className="block">
                             <h2> Job number : {index + 1}</h2>
                             <div key={index} className="work">
                                 <div>
@@ -141,11 +163,21 @@ const Resume = () => {
                             </div>
                         </div>
                     ))}
+
                     <div class="rightflex">
+                    <div>
+                        {
+                         inputFields.length > 0 &&
+                            <button type = "button" className="delete" onClick={handleWorkDelete}>
+                                delete work field
+                            </button>
+                        }     
+                        </div> 
                         <button type="button" onClick={handleAddField}>
                             add work field
-                        </button>
+                        </button>            
                     </div>
+ 
                 </div>
             </div>
             <div className="boxes">
@@ -194,6 +226,14 @@ const Resume = () => {
                         ))}
                     </div>
                     <div class="rightflex">
+                    <div>
+                        {
+                         eduinputFields.length > 0 &&
+                            <button type = "button" className="delete" onClick={handleEduDelete}>
+                                delete educational institution
+                            </button>
+                        }     
+                        </div> 
                         <button type="button" onClick={handleAddFieldEdu}>
                             Add educational institution
                         </button>
@@ -230,6 +270,14 @@ const Resume = () => {
                         </div>
                     ))}
                     <div class="rightflex">
+                    <div>
+                        {
+                         skillinputFields.length > 0 &&
+                            <button type = "button" className="delete" onClick={handleSkillDelete}>
+                                delete skill
+                            </button>
+                        }     
+                        </div> 
                         <button
                             type="button"
                             onClick={handleAddFieldSkill}
