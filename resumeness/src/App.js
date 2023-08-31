@@ -6,6 +6,7 @@ import Workdata from './Workdata';
 //import { library } from '@fortawesome/fontawesome-svg-core'
 
 import Preview from './Preview';
+import Coverletter from './Coverletter';
 import Coverletterpreview from './Coverletterpreview';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route exact path = "/Resume" element = {<Resume />}></Route>
             <Route path = "/About" element = {<Coverletterpreview />}></Route>
             <Route path = "/Resume/Preview" element = {<Preview />}></Route>
+            <Route path = "/Coverletter" element = {<Coverletter />}></Route>
           </Routes>
         </div>
     </Router> 
