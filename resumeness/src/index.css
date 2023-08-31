@@ -39,15 +39,15 @@ code {
   font-size: 30px;
 }
 
-.navbar a{
+a{
   color: white;
   font-size: 27px;
   text-decoration: none;
   transition: 0.7s;
 }
 
-.navbar a:hover {
-  text-shadow: 2px 2px 5px #439acf;
+a:hover {
+  text-shadow: 2px 2px 20px #439acf;
   transition: 0.5s;
 }
 .title{
@@ -403,6 +403,22 @@ label{
 
 }
 
+.leftcl + .rightcl{
+  border-left: 2px solid black;
+}
+
 .rightcl{
-  padding-top: 200px;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px
+}
+
+.compinfo{
+  align-self: self-end;
+}
+
+.paragraph p{
+  width: 300px;
+  word-wrap: break-word;
 }
