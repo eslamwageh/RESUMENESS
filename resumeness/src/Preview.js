@@ -10,12 +10,12 @@ const Preview = () => {
     const cv = useRef();
     async function generatePDF() {
         const { jsPDF } = window.jspdf;
-        const doc = new jsPDF("p", "pt");
+        const doc = new jsPDF("p", "pt", "a4");
         await html2canvas(cv.current, {
             width: 500,
             height: 800,
         }).then((canvas) => {
-            doc.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, 600, 1030);
+            doc.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0,  600, 1030);
         });
         doc.save("Document.pdf");
     }

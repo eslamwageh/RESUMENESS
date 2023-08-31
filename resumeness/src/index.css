@@ -417,3 +417,38 @@ label{
   transform: scale(1.1);
   background-color: #4a83ae;
 }
+
+.previewcl{
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  width: 500px;
+  height: 600px;
+  font-size: x-small;
+  background-color: #fffded;
+  padding: 40px 50px;
+}
+
+.leftcl h1{
+  text-align: left;
+  color: #d5340b;
+}
+
+.leftcl h4{
+  margin-top: 30px;
+}
+
+.leftcl p{
+  margin: 0px;
+}
+
+.leftcl hr{
+  border: 3px solid black;
+  width: 30px;
+  margin-left: 0px;
+
+}
+
+.rightcl{
+  padding-top: 200px;
+}
