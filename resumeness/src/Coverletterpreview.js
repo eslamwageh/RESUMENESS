@@ -6,7 +6,7 @@ const Coverletterpreview = () => {
     const location = useLocation();
     const info = location.state;
     //const { name, address } = location.state || {};
-
+    //8.26 × 11.69
     const cl = useRef();
     async function generatePDF() {
         const { jsPDF } = window.jspdf;
@@ -15,7 +15,7 @@ const Coverletterpreview = () => {
             width: 600,
             height: 800,
         }).then((canvas) => {
-            doc.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, 600, 1030);
+            doc.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, 600, 1000);
         });
         doc.save("Document.pdf");
     }
@@ -23,102 +23,28 @@ const Coverletterpreview = () => {
         <div className="coverletterpreview">
             <div className="previewcl" ref={cl}>
                 <div className="leftcl">
-                    <h1>VICTORIA</h1>
-                    <h1>BURKE</h1>
-                    <h3>Manager</h3>
+                    <h1>{info.name.split(' ')[0]}</h1>
+                    <h1>{info.name.split(' ')[1]}</h1>
+                    <h3>{info.title}</h3>
                     <hr />
                     <h4>CONTACT</h4>
-                    <p>adfagadg</p>
-                    <p>adfagadg</p>
-                    <p>adfagadg</p>
-                    <p>adfagadg</p>
+                    <p>{info.address}</p>
+                    <p>{info.number}</p>
+                    <p>{info.email}</p>
+                    {info.LI && <p>{info.LI}</p>}
                 </div>
                 <div className="rightcl">
-                    <h4>DEAR RECIPIENT</h4>
-                    <p>
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                        adfafafajjfjfjfjfjfjfj
-                        fjfjfjfjfjfjfjjfjfjfjfj
-                        fjfjfjfjfjfjfjfjf
-                    </p>
+                    <div className="compinfo">
+                        <p>{info.recname}</p>
+                        <p>{info.rectitle}</p>
+                        <p>{info.compname}</p>
+                        <p>{info.comploc}</p>
+                    </div>
+                    <div className="paragraph">
+                        <h4>DEAR {info.recname}</h4>
+                        <p>    {info.para}</p>  
+                    </div>
+                    
                 </div>
             </div>
             <button onClick={generatePDF}>Download pdf</button>

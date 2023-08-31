@@ -15,7 +15,7 @@ const Preview = () => {
             width: 500,
             height: 800,
         }).then((canvas) => {
-            doc.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0,  600, 1030);
+            doc.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0,  600, 1140);
         });
         doc.save("Document.pdf");
     }
