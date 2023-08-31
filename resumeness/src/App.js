@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './Navbar';
 import Home from './Home';
 import Resume from './Resume';
+import About from './About';
 import Workdata from './Workdata';
 //import { library } from '@fortawesome/fontawesome-svg-core'
 
@@ -20,6 +21,7 @@ function App() {
             <Route exact path = "/Coverletter" element = {<Coverletter />}></Route>
             <Route path = "/Coverletter/Previewcoverletter" element = {<Coverletterpreview />}></Route>
             <Route path = "/Resume/Preview" element = {<Preview />}></Route>
+            <Route path = "/About" element = {<About />}></Route>
           </Routes>
         </div>
     </Router> 

@@ -9,7 +9,7 @@ body {
   /* background-color: #439acf; */
   /* background-blend-mode: exclusion;
   background-size: 100% 100%; */
-  background: linear-gradient(to bottom, #022d56 , #439acf);
+  background: linear-gradient(to bottom, #011a32 , #439acf);
   background-attachment: fixed;
 }
 
@@ -44,6 +44,11 @@ a{
   font-size: 27px;
   text-decoration: none;
   transition: 0.7s;
+}
+
+button a{
+  color: black;
+  font-size: 20px;
 }
 
 a:hover {
@@ -84,12 +89,17 @@ a:hover {
   border-radius: 20px;
 }
 
+.items img{
+  width: 250px;
+  height: 350px;
+}
+
 .items button{
   border-radius: 15px;
-  background-color:#003b73;
+  background-color:#fede29;
   padding: 10px;
   border-width: 0;
-  color: white;
+  color: black;
   height: 50px;
   font-size: 1.5em;
   cursor: pointer;
@@ -119,6 +129,7 @@ input {
   text-align: left;
   margin: auto;
   border-radius: 10px;
+  color: rgb(207, 237, 255);
   border: 2px solid white;
   padding: 25px;
   /* background-size: 100% 100%;
@@ -126,6 +137,10 @@ input {
   margin-top: 50px;
   padding-bottom: 50px;
   padding-top: 35px;
+}
+
+.boxes h1{
+  text-shadow: 0px 0px 5px #ceddfd;
 }
 
 h1{
@@ -164,6 +179,7 @@ textarea{
   width: 500px;
   height: 600px;
   font-size: x-small;
+  box-shadow: 0px 0px 100px #00263f;
 }
 
 .preview{
@@ -331,10 +347,16 @@ label{
   font-size: 20px;
   padding: 15px;
   background-color:#fede29;
+  transition: 0.5s;
+  color: black;
   /* float: right;
   box-sizing: border-box;
   width: 250px; */
   /* box-sizing: border-box; */
+}
+
+.inner button:hover{
+  box-shadow: 0px 0px 10px #fff7cc;
 }
 
 /* .inner{
@@ -381,6 +403,7 @@ label{
   font-size: x-small;
   background-color: #fffded;
   padding: 40px 50px;
+  box-shadow: 0px 0px 100px #00263f;
 }
 
 .leftcl h1{
@@ -421,4 +444,41 @@ label{
 .paragraph p{
   width: 300px;
   word-wrap: break-word;
+}
+
+.about{
+  display: flex;
+  margin: auto;
+  margin-top: 70px;
+  justify-content: space-around;
+}
+
+.centerabout{
+  flex-direction: column;
+  width: 40%;
+  color:rgb(207, 237, 255);
+  font-weight: 600;
+  text-align: center;
+  font-size: 20px;
+}
+
+.about h1{
+  text-shadow: 0px 0px 10px #ceddfd;
+  font-size: 60px;
+  margin-bottom: 50px;
+}
+
+.about span{
+  text-shadow: 0px 0px 5px #ceddfd;
+}
+
+.about img{
+  width: 350px;
+  height: 550px;
+  border-radius: 50px;
+}
+
+.botabout{
+  margin-top: 200px;
+  font-size: 30px;
 }
