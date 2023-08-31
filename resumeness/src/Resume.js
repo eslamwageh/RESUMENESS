@@ -7,12 +7,11 @@ const Resume = () => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate(-1);
         //    setTimeout(() => {        how to navigate back then to the reqired page ?
         const formData = new FormData(e.target);
         const values = Object.fromEntries(formData.entries());
         navigate("./Preview", {
-            state: { name: values.name, address: values.address },
+            state: values,
         });
         //   }, 1);
     };
@@ -53,6 +52,23 @@ const Resume = () => {
         setSkillInputFields([...skillinputFields, ""]);
     };
 
+    const [crtinputFields, setCrtInputFields] = useState([]);
+
+    const handleAddFieldCrt = () => {
+        setCrtInputFields([...crtinputFields, ""]);
+    };
+
+    const [langinputFields, setLangInputFields] = useState([]);
+
+    const handleAddFieldLang = () => {
+        setLangInputFields([...langinputFields, ""]);
+    };
+
+    const [hobbinputFields, setHobbInputFields] = useState([]);
+
+    const handleAddFieldHobb = () => {
+        setHobbInputFields([...hobbinputFields, ""]);
+    };
 
     return (
         <form action="" className="form" onSubmit={handleSubmit}>
@@ -100,7 +116,7 @@ const Resume = () => {
                     </li>
                 </ul>
                 <textarea
-                    name="summary"
+                    name="title"
                     id="freetextarea"
                     rows={6}
                     cols={90}
@@ -185,9 +201,9 @@ const Resume = () => {
                 <div className="inner">
                     <ul>
                         <li>Degrees earned: (e.g., Bachelor's, Master's)</li>
-                        <input type="text" required />
+                        <input type="text" name="degrees" required />
                         <li>Field of Study</li>
-                        <input type="text" required />
+                        <input type="text" name="field" required />
                     </ul>
                     <div>
                         {eduinputFields.map((field, index) => (
@@ -260,7 +276,7 @@ const Resume = () => {
                                 <div>
                                     <label>Percentage of mastery: </label>
                                     <input
-                                        type="text"
+                                        type="number"
                                         className="smallinput"
                                         name={`skillprc${index}`}
                                         required
@@ -287,6 +303,106 @@ const Resume = () => {
                     </div>
                 </div>
             </div>
+
+            <div className="boxes">
+                <h1>Certificates</h1>
+                <div className="inner">
+                    {crtinputFields.map((field, index) => (
+                        <div>
+                            <h2> Certificate number : {index + 1}</h2>
+                            <div key={index} className="work">
+                                <div>
+                                    <label>Certificate name: </label>
+                                    <input
+                                        type="text"
+                                        className="smallinput"
+                                        name={`crt${index}`}
+                                        required
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                    <div class="rightflex">
+                        <button
+                            type="button"
+                            onClick={handleAddFieldCrt}
+                        >
+                            add Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div className="boxes">
+                <h1>Languages</h1>
+                <div className="inner">
+                    {langinputFields.map((field, index) => (
+                        <div>
+                            <h2> Language number : {index + 1}</h2>
+                            <div key={index} className="work">
+                                <div>
+                                    <label>Language name: </label>
+                                    <input
+                                        type="text"
+                                        className="smallinput"
+                                        name={`lang${index}`}
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <label>Language Percentage of Mastery: </label>
+                                    <input
+                                        type="number"
+                                        className="smallinput"
+                                        name={`langprc${index}`}
+                                        required
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                    <div class="rightflex">
+                        <button
+                            type="button"
+                            onClick={handleAddFieldLang}
+                        >
+                            add Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div className="boxes">
+                <h1>Hobbies and interests</h1>
+                <div className="inner">
+                    {hobbinputFields.map((field, index) => (
+                        <div>
+                            <h2> hobby number : {index + 1}</h2>
+                            <div key={index} className="work">
+                                <div>
+                                    <label>hobby name: </label>
+                                    <input
+                                        type="text"
+                                        className="smallinput"
+                                        name={`hobb${index}`}
+                                        required
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                    <div class="rightflex">
+                        <button
+                            type="button"
+                            onClick={handleAddFieldHobb}
+                        >
+                            add hobby
+                        </button>
+                    </div>
+                </div>
+            </div>
+
 
             <button className="but" type="submit">
                 Create your cv
