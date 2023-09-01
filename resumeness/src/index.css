@@ -95,6 +95,17 @@ code {
   cursor: pointer;
 }
 
+.visible {
+  /* transition-property: red, black;
+  transition-duration: 5s;
+  transition-timing-function: ease-out; */
+  transition: all 5s ease-out;
+}
+
+.hidden {
+  transition: 0 0.3s ease-in;
+}
+
 .items button:hover {
   box-shadow:0px 0px 10px white;
   transition: .5s;
@@ -112,6 +123,10 @@ input {
   font-size: 20px;
   padding: 5px;
   margin-top: 5px;
+}
+
+.block {
+
 }
 
 .boxes {
@@ -405,4 +420,21 @@ label{
 
 .rightcl{
   padding-top: 200px;
+}
+
+.but{
+  margin-top :30px;
+  border-radius: 30px;
+  border-width: 0;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 15px;
+  background-color:#fede29;
+  
+}
+
+.butdiv{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
 }

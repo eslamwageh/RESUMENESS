@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 const Resume = () => {
     const navigate = useNavigate();
-    
+
     const handleSubmit = (e) => {
         e.preventDefault();
         //    setTimeout(() => {        how to navigate back then to the reqired page ?
@@ -20,24 +20,52 @@ const Resume = () => {
         let arr = [...inputFields];
         arr.pop();
         setInputFields(arr);
-    }
+    };
 
     const handleEduDelete = () => {
         let arr = [...eduinputFields];
         arr.pop();
         setEduInputFields(arr);
-    }
+    };
 
     const handleSkillDelete = () => {
         let arr = [...skillinputFields];
         arr.pop();
         setSkillInputFields(arr);
-    }
+    };
+
+    const handleCrtDelete = () => {
+        let arr = [...crtinputFields];
+        arr.pop();
+        setCrtInputFields(arr);
+    };
+
+    const handleLangDelete = () => {
+        let arr = [...langinputFields];
+        arr.pop();
+        setLangInputFields(arr);
+    };
+
+    const handleHobbDelete = () => {
+        let arr = [...hobbinputFields];
+        arr.pop();
+        setHobbInputFields(arr);
+    };
+
+    // const [isVisible, setIsVisible] = useState([]);
+
+    // const toggleVisibility = (index) => {
+    //     let arr = [...skillinputFields];
+    //     arr[index] = !arr[index];
+    //     setIsVisible(arr);
+
+    // };
 
     const [inputFields, setInputFields] = useState([]);
 
     const handleAddField = () => {
         setInputFields([...inputFields, ""]);
+        // setIsVisible([...inputFields, true]);
     };
 
     const [eduinputFields, setEduInputFields] = useState([]);
@@ -123,9 +151,8 @@ const Resume = () => {
                 ></textarea>
 
                 <div className="inner">
-
                     {inputFields.map((field, index) => (
-                        <div className="block">
+                        <div className="block visible">
                             <h2> Job number : {index + 1}</h2>
                             <div key={index} className="work">
                                 <div>
@@ -177,23 +204,31 @@ const Resume = () => {
                                     />
                                 </div>
                             </div>
+                            {/* <button
+                                onClick={toggleVisibility}
+                                className={isVisible ? "active" : ""}
+                            >
+                                {isVisible[index] ? "-" : "+"}
+                            </button> */}
                         </div>
                     ))}
 
                     <div class="rightflex">
-                    <div>
-                        {
-                         inputFields.length > 0 &&
-                            <button type = "button" className="delete" onClick={handleWorkDelete}>
-                                delete work field
-                            </button>
-                        }     
-                        </div> 
+                        <div>
+                            {inputFields.length > 0 && (
+                                <button
+                                    type="button"
+                                    className="delete"
+                                    onClick={handleWorkDelete}
+                                >
+                                    delete work field
+                                </button>
+                            )}
+                        </div>
                         <button type="button" onClick={handleAddField}>
                             add work field
-                        </button>            
+                        </button>
                     </div>
- 
                 </div>
             </div>
             <div className="boxes">
@@ -242,14 +277,17 @@ const Resume = () => {
                         ))}
                     </div>
                     <div class="rightflex">
-                    <div>
-                        {
-                         eduinputFields.length > 0 &&
-                            <button type = "button" className="delete" onClick={handleEduDelete}>
-                                delete educational institution
-                            </button>
-                        }     
-                        </div> 
+                        <div>
+                            {eduinputFields.length > 0 && (
+                                <button
+                                    type="button"
+                                    className="delete"
+                                    onClick={handleEduDelete}
+                                >
+                                    delete educational institution
+                                </button>
+                            )}
+                        </div>
                         <button type="button" onClick={handleAddFieldEdu}>
                             Add educational institution
                         </button>
@@ -286,18 +324,18 @@ const Resume = () => {
                         </div>
                     ))}
                     <div class="rightflex">
-                    <div>
-                        {
-                         skillinputFields.length > 0 &&
-                            <button type = "button" className="delete" onClick={handleSkillDelete}>
-                                delete skill
-                            </button>
-                        }     
-                        </div> 
-                        <button
-                            type="button"
-                            onClick={handleAddFieldSkill}
-                        >
+                        <div>
+                            {skillinputFields.length > 0 && (
+                                <button
+                                    type="button"
+                                    className="delete"
+                                    onClick={handleSkillDelete}
+                                >
+                                    delete skill
+                                </button>
+                            )}
+                        </div>
+                        <button type="button" onClick={handleAddFieldSkill}>
                             add skill
                         </button>
                     </div>
@@ -324,10 +362,18 @@ const Resume = () => {
                         </div>
                     ))}
                     <div class="rightflex">
-                        <button
-                            type="button"
-                            onClick={handleAddFieldCrt}
-                        >
+                        <div>
+                            {crtinputFields.length > 0 && (
+                                <button
+                                    type="button"
+                                    className="delete"
+                                    onClick={handleCrtDelete}
+                                >
+                                    delete Certificate
+                                </button>
+                            )}
+                        </div>
+                        <button type="button" onClick={handleAddFieldCrt}>
                             add Certificate
                         </button>
                     </div>
@@ -351,7 +397,7 @@ const Resume = () => {
                                     />
                                 </div>
                                 <div>
-                                    <label>Language Percentage of Mastery: </label>
+                                    <label>Percentage of Mastery: </label>
                                     <input
                                         type="number"
                                         className="smallinput"
@@ -363,11 +409,19 @@ const Resume = () => {
                         </div>
                     ))}
                     <div class="rightflex">
-                        <button
-                            type="button"
-                            onClick={handleAddFieldLang}
-                        >
-                            add Certificate
+                        <div>
+                            {langinputFields.length > 0 && (
+                                <button
+                                    type="button"
+                                    className="delete"
+                                    onClick={handleLangDelete}
+                                >
+                                    delete language
+                                </button>
+                            )}
+                        </div>
+                        <button type="button" onClick={handleAddFieldLang}>
+                            add language
                         </button>
                     </div>
                 </div>
@@ -393,20 +447,28 @@ const Resume = () => {
                         </div>
                     ))}
                     <div class="rightflex">
-                        <button
-                            type="button"
-                            onClick={handleAddFieldHobb}
-                        >
+                        <div>
+                            {hobbinputFields.length > 0 && (
+                                <button
+                                    type="button"
+                                    className="delete"
+                                    onClick={handleHobbDelete}
+                                >
+                                    delete hobby
+                                </button>
+                            )}
+                        </div>
+                        <button type="button" onClick={handleAddFieldHobb}>
                             add hobby
                         </button>
                     </div>
                 </div>
             </div>
-
-
+            <div className="butdiv">
             <button className="but" type="submit">
                 Create your cv
             </button>
+            </div>
         </form>
     );
 };

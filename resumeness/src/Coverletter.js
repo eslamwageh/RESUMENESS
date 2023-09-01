@@ -51,10 +51,11 @@ const Coverletter = () => {
                     </ul>
                 </div>
             </div>
-
+            <but className="butdiv">
             <button className="but" type="submit">
                 Create your coverletter
             </button>
+            </but>
         </form>
     );
 };
