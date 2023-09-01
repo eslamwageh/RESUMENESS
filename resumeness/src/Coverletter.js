@@ -8,14 +8,13 @@ const Coverletter = () => {
         const formData = new FormData(e.target);
         const values = Object.fromEntries(formData.entries());
         navigate("./Previewcoverletter", {
-            state: { values },
+            state: values,
         });
     };
 
     return (
         <form action="" className="form" onSubmit={handleSubmit}>
-
-<div className="boxes">
+            <div className="boxes">
                 <h1>Personal information</h1>
                 <div className="inner">
                     <ul>
