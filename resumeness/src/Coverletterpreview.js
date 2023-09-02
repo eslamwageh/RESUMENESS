@@ -1,27 +1,53 @@
 import { useRef } from "react";
 import html2canvas from "html2canvas";
 import { useLocation } from "react-router-dom";
+import React from 'react';
+import jsPDF from 'jspdf';
 
 const Coverletterpreview = () => {
     const location = useLocation();
     const info = location.state;
     //const { name, address } = location.state || {};
     //8.26 × 11.69
-    const cl = useRef();
-    async function generatePDF() {
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF("p", "pt");
-        await html2canvas(cl.current, {
-            width: 600,
-            height: 800,
-        }).then((canvas) => {
-            doc.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, 600, 1000);
-        });
-        doc.save("Document.pdf");
-    }
+    const captureRef = React.useRef(null);
+    const generatePDF = async () => {
+        if (captureRef.current) {
+          const contentWidth = captureRef.current.offsetWidth;
+          const contentHeight = captureRef.current.offsetHeight;
+      
+          const pdf = new jsPDF('p', 'pt', [contentWidth, contentHeight]);
+          let position = 0;
+      
+          const renderPage = async () => {
+            const canvas = await html2canvas(captureRef.current, {
+              y: position,
+              scrollY: -position,
+              windowWidth: contentWidth,
+              windowHeight: contentHeight
+            });
+      
+            const imgData = canvas.toDataURL('image/png');
+            const imgProps = pdf.getImageProperties(imgData);
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+      
+            pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+            position -= contentHeight;
+      
+            if (position > -contentHeight) {
+              pdf.addPage();
+              await renderPage();
+            } else {
+              pdf.save('capture.pdf');
+            }
+          };
+      
+          await renderPage();
+        }
+      };
     return (
         <div className="coverletterpreview">
-            <div className="previewcl" ref={cl}>
+            <div className="previewcl" ref={captureRef}>
                 <div className="leftcl">
                     <h1>{info.name.split(' ')[0]}</h1>
                     <h1>{info.name.split(' ')[1]}</h1>
