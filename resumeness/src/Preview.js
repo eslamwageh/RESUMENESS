@@ -1,27 +1,53 @@
 import { useRef } from "react";
 import html2canvas from "html2canvas";
 import { useLocation } from "react-router-dom";
+import React from 'react';
+import jsPDF from 'jspdf';
 
 const Preview = () => {
     const location = useLocation();
     const info = location.state;
     //const { name, address } = location.state || {};
 
-    const cv = useRef();
-    async function generatePDF() {
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF("p", "pt", "a4");
-        await html2canvas(cv.current, {
-            width: 500,
-            height: 800,
-        }).then((canvas) => {
-            doc.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0,  600, 1140);
-        });
-        doc.save("Document.pdf");
-    }
+    const captureRef = React.useRef(null);
+    const generatePDF = async () => {
+        if (captureRef.current) {
+          const contentWidth = captureRef.current.offsetWidth;
+          const contentHeight = captureRef.current.offsetHeight;
+      
+          const pdf = new jsPDF('p', 'pt', [contentWidth, contentHeight]);
+          let position = 0;
+      
+          const renderPage = async () => {
+            const canvas = await html2canvas(captureRef.current, {
+              y: position,
+              scrollY: -position,
+              windowWidth: contentWidth,
+              windowHeight: contentHeight
+            });
+      
+            const imgData = canvas.toDataURL('image/png');
+            const imgProps = pdf.getImageProperties(imgData);
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+      
+            pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+            position -= contentHeight;
+      
+            if (position > -contentHeight) {
+              pdf.addPage();
+              await renderPage();
+            } else {
+              pdf.save('capture.pdf');
+            }
+          };
+      
+          await renderPage();
+        }
+      };
     return (
         <div className="preview">
-            <div className="previewcv" ref={cv}>
+            <div className="previewcv" ref={captureRef}>
                 <div className="left-part">
                     <h2>DEGREE</h2>
                     <hr />

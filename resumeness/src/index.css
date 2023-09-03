@@ -192,7 +192,7 @@ textarea{
   display: grid;
   grid-template-columns: 1fr 2fr;
   width: 500px;
-  height: 600px;
+  min-height: 600px;
   font-size: x-small;
   box-shadow: 0px 0px 100px #00263f;
 }
@@ -200,7 +200,7 @@ textarea{
 .preview{
   display: flex;
   flex-direction: column;
-  height: 800px;
+  gap: 30px;
 }
 .preview p{
   margin: 0;
@@ -414,7 +414,7 @@ label{
   display: grid;
   grid-template-columns: 2fr 3fr;
   width: 500px;
-  height: 600px;
+  min-height: 600px;
   font-size: x-small;
   background-color: #fffded;
   padding: 40px 50px;
@@ -424,7 +424,7 @@ label{
 .coverletterpreview{
   display: flex;
   flex-direction: column;
-  height: 800px;
+  gap: 30px;
 }
 
 .coverletterpreview button{
