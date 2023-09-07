@@ -22,7 +22,6 @@ code {
   display: flex;
   justify-content: space-around;
   align-items: center;
-
 }
 
 .navbar .nav-pages {
@@ -55,32 +54,106 @@ a:hover {
   text-shadow: 2px 2px 20px #439acf;
   transition: 0.5s;
 }
+
 .title{
   text-align: center;
   font-size: 75px;
   margin: 40px;
-
 }
-.details{
+
+.home-title{
   text-align: center;
-  font-size: 50px;
+  font-size: 60px;
   color:white;
-  margin: 100px;
+  margin: 30px;
   font-weight: 600;
   text-shadow: 1px 1px 5px #439acf;
 }
 
-.create{
-  display: flex;
-  justify-content: space-around;
-  margin: 50px;
+.home-paragraph{
+  text-align: center;
+  font-size: 16px;
+  color:white;
+  font-weight: 600;
+  margin: 20px;
 }
 
-.items{
+.details{
+  text-align: center;
+  font-size: 50px;
+  color:white;
+  margin: 40px;
+  font-weight: 600;
+  text-shadow: 1px 1px 5px #439acf;
+}
+
+.view{
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.first{
+  animation:  3s  ease-in-out 0s infinite roll;
+}
+
+.second{
+  animation:  3s  ease-in-out 4s infinite roll;
+
+}
+
+.third{
+  animation:  3s  ease-in-out 8s infinite roll;
+}
+
+@keyframes roll {
+  0% {
+    order:-1;
+  }
+
+  100% {
+    order:3;
+  }
+}
+
+.view img {
+  width: 300px;
+  height: 400px;
+  border-radius: 20px;
+}
+
+.home button {
+  width: 20%;
+  height: 50px;
+  border-radius: 20px;
+  margin: 0px 40% 10px;
+}
+
+.create{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 30px;
+  margin: 50px;
+}
+
+.profile-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: start;
+}
+.items{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  background-color: #4399cf29;
+  border: white solid 2px;
+  border-radius: 20px;
+  padding: 20px 2% 20px 2%;
+  width: 96.6%;
+  flex-wrap: wrap;
 }
 
 .create img {
@@ -94,6 +167,20 @@ a:hover {
   height: 350px;
 }
 
+.add{
+  width: 250px;
+  height: 350px;
+  background-color: #4399cf;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.items h1{
+  width: 250px;
+}
+
 .items button{
   border-radius: 15px;
   background-color:#fede29;
@@ -103,6 +190,19 @@ a:hover {
   height: 50px;
   font-size: 1.5em;
   cursor: pointer;
+  width: 250px;
+}
+
+.profile-title{
+  margin-top: 20px;
+  font-size: 48px;
+  color: #fffded;
+  text-shadow: 0px 0px 5px #ceddfd;
+}
+
+.category-title{
+  font-size: 24px;
+  color: #fffded;
 }
 
 .visible {
@@ -121,8 +221,6 @@ a:hover {
   transition: .5s;
 }
 
-
-
 input {
   border-radius: 5px;
   border-width: 0;
@@ -136,7 +234,6 @@ input {
 }
 
 .block {
-
 }
 
 .boxes {
@@ -186,7 +283,6 @@ textarea{
   padding: 20px;
 }
 
-
 .previewcv{
   margin: auto;
   display: grid;
@@ -202,6 +298,7 @@ textarea{
   flex-direction: column;
   gap: 30px;
 }
+
 .preview p{
   margin: 0;
 }
@@ -393,6 +490,7 @@ label{
   font-size: 30px;
   margin-left: 6px;
 }
+
 .preview button{
   width: 150px;
   height: 40px;
@@ -538,4 +636,77 @@ label{
 
 .but:hover{
   box-shadow: 0px 0px 10px #fff7cc;
+}
+
+.Sign,
+.Login{
+  display: flex;
+  padding: 40px 160px;
+  justify-content: center;
+  align-items: center;
+}
+
+.signUpContainer,
+.loginContainer{
+  box-shadow: 0px 0px 48px 0px rgba(0, 0, 0, 0.40);
+  width: 700px;
+  height: fit-content;
+  padding: 20px;
+  border: #fffded 2px solid;
+  border-radius: 20px;
+}
+
+.signUpContainer h1,
+.loginContainer h1{
+  text-align: center;
+  font-size: 40px;
+  margin: 10px auto 0px;
+  color: white;
+  text-shadow: 0px 0px 10px #ceddfd;
+}
+
+.signUpForm,
+.LoginForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px ;
+  padding-left: 50px;
+  row-gap: 10px;
+}
+
+.signUpContainer label,
+.loginContainer label{
+  color:#ceddfd;
+}
+
+.signUpContainer h6,
+.loginContainer h6{
+  color: #ceddfd;
+  display: inline;
+  margin-left: 10px;
+}
+
+.signUpForm input,
+.LoginForm input{
+  border-radius: 5px;
+  border-width: 0;
+  box-shadow: 1px 2px gray;
+  height: 30px;
+  width: 80%;
+  background-color: rgb(255, 255, 255);
+  font-size: 20px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.signUpForm button,
+.LoginForm button{
+  width: 40%;
+  margin: 20px auto 0px;
+}
+
+h5{
+  margin: -10px;
+  text-align: center;
 }
