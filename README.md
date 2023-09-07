@@ -44,10 +44,13 @@ To run this project locally, follow these steps:
 
 ## Team Members
 
-👨‍💻 Ashraf Bahy\
-👨‍💻 Eslam Wageh\
-👨‍💻 Ahmed Hamdy\
-👨‍💻 Abdelrahman Sami
+👨‍💻 Eslam Wageh ([@Eslam Wageh] (https://github.com/Eslam Wageh))
+
+👨‍💻 Ashraf Bahy ([@Ashraf Bahy](https://github.com/Ashraf Bahy))
+
+👨‍💻 Ahmed Hamdy ([@AhmedHamdiy](https://github.com/AhmedHamdiy))
+
+👨‍💻 Abdelrahman Sami ([@AbdelruhmanSamy](https://github.com/AbdelruhmanSamy))
 
 ## Acknowledgments
 
