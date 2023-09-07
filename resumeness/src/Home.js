@@ -1,23 +1,20 @@
 import { Link } from 'react-router-dom';
-
+import Sign from './Sign';
 const Home = () => {
     return (
         <div className="home">
-        {/* <div className="title">RESUMENESS</div> */}
-        <div className="details">ONLINE RESUME BUILDER</div>;
-        <div className="create">
-            <div className="items">
-                <img src="./photos/CV template2.jpg" alt="tmpimg" />
-                <button><Link to='/Resume'>Add CV</Link></button>
+        <h1 className="home-title">RESUMENESS</h1>
+            <p className='home-paragraph'>Log in, fill in the blanks, and download your resume instantly.</p>
+        <div className="view">
+                <img className ='first' src="./photos/CV template2.jpg" alt="tmpimg" />
+                <img className ='second' src="photos/coverletter.webp" alt="tmpimg" />
+                <img className ='third' src="./photos/resume.jpg" alt="tmpimg" />
             </div>
-            <div className="items">
-                <img src="photos/coverletter.webp" alt="tmpimg" />
-                <button><Link to='/Coverletter'>Add Cover Letter</Link></button>
-            </div>
-        </div>
+            <button className="but" type="submit">
+                <Link to='/Login'>Let's Start</Link>
+            </button>
         </div>
         
-      );
+    );
 }
- 
 export default Home;

@@ -112,7 +112,7 @@ const Resume = () => {
                                 <li>address:</li>
                                 <input type="text" name="address" required />
                                 <li>phone number:</li>
-                                <input type="number" name="number" required />
+                                <input type="text" name="number" required />
                                 <li>email:</li>
                                 <input type="email" name="email" required />
                             </ol>
