@@ -3,17 +3,20 @@
 A web application designed to help to create your professional resume and cover letter. This project serves as a practice platform for developing both front-end skills using React, back-end skills using Express, and working with MongoDB as the database. Our esteemed mentor for this project is Eng. Omar Mohammed as project for CST (Computer Engineering Department Summer Training) 🌟.
 
 ## Features
-
--✨ Create professional resumes and cover letters easily.
--✨ User-friendly interface with a modern design.
--✨ Save and manage your created documents.
--✨ Each user can see his profile which shows his/her resumes that have been created.
--✨ When the user clicks on one of the created resumes, a PDF file will be downloaded .
+<ol>
+<li>✨ Create professional resumes and cover letters easily.</li>
+<li>✨ User-friendly interface with a modern design.</li>
+<li>✨ Save and manage your created documents.</li>
+<li>✨ Each user can see his profile which shows his/her resumes that have been created.</li>
+<li>✨ When the user clicks on one of the created resumes, a PDF file will be downloaded . </li>
+</ol>
 
 ## Tech Stack
 
 🚀 Front-end: React
+
 🔙 Back-end: Express
+
 💾 Database: MongoDB
 
 ## Getting Started
