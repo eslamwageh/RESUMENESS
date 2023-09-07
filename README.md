@@ -4,11 +4,11 @@ A web application designed to help to create your professional resume and cover 
 
 ## Features
 
-✨ Create professional resumes and cover letters easily.
-✨ User-friendly interface with a modern design.
-✨ Save and manage your created documents.
-✨ Each user can see his profile which shows his/her resumes that have been created.
-✨ When the user clicks on one of the created resumes, a PDF file will be downloaded .
+-✨ Create professional resumes and cover letters easily.
+-✨ User-friendly interface with a modern design.
+-✨ Save and manage your created documents.
+-✨ Each user can see his profile which shows his/her resumes that have been created.
+-✨ When the user clicks on one of the created resumes, a PDF file will be downloaded .
 
 ## Tech Stack
 
