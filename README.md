@@ -44,9 +44,9 @@ To run this project locally, follow these steps:
 
 ## Team Members
 
-👨‍💻 Eslam Wageh ([@Eslam Wageh] (https://github.com/Eslam Wageh))
+👨‍💻 Eslam Wageh [([@Eslam Wageh] (https://github.com/Eslam Wageh))](https://github.com/eslamwageh)
 
-👨‍💻 Ashraf Bahy ([@Ashraf Bahy](https://github.com/Ashraf Bahy))
+👨‍💻 Ashraf Bahy [([@Ashraf Bahy](https://github.com/Ashraf Bahy))](https://github.com/Ashraf-Bahy)
 
 👨‍💻 Ahmed Hamdy ([@AhmedHamdiy](https://github.com/AhmedHamdiy))
 
