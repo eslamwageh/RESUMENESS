@@ -17,7 +17,9 @@ const Profile = () => {
                         <img src="./photos/CV template2.jpg" alt="tmpimg" />
                         <img src="./photos/CV template2.jpg" alt="tmpimg" />
                         <img src="./photos/CV template2.jpg" alt="tmpimg" />
-                        <div className='add'><Link to='/Resume'>Add CV</Link></div>
+                        <Link to='/Resume'>
+                            <div className='add'>Add CV</div>
+                        </Link>
                     </div>
                 </div>
                 <div className="profile-section">
@@ -30,7 +32,9 @@ const Profile = () => {
                     <img src="photos/coverletter.webp" alt="tmpimg" />
                     <img src="photos/coverletter.webp" alt="tmpimg" />
                     <img src="photos/coverletter.webp" alt="tmpimg" />
-                    <div className='add'><Link to='/Coverletter'>Add Cover Letter</Link></div>
+                    <Link to='/Coverletter'>
+                        <div className='add'>Add Cover Letter</div>
+                    </Link>
                 </div>
             </div>
         </div>

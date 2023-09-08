@@ -12,7 +12,9 @@ const Sign = () => {
                     <input type="text" required />
                     <label>Password:</label>
                     <input type="password" required />
-                    <button className="but" type="submit"><Link to='/Profile'>Sign Up</Link></button>
+                    <Link to='/Profile' className='link'>
+                        <button className="sign-button" type="submit">Sign Up</button>
+                    </Link>
                 </form>
                 <h5> Already have an account?
                     <Link to='/Login'>
