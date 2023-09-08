@@ -10,9 +10,11 @@ const Home = () => {
                 <img className ='second' src="photos/coverletter.webp" alt="tmpimg" />
                 <img className ='third' src="./photos/resume.jpg" alt="tmpimg" />
             </div>
-            <button className="but" type="submit">
-                <Link to='/Login'>Let's Start</Link>
-            </button>
+            <Link to='/Login'>
+                <button className="but" type="submit">
+                    Let's Start
+                </button>            
+            </Link>
         </div>
         
     );

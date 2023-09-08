@@ -10,7 +10,9 @@ const Login = () => {
                         <input type="text" required />
                         <label>Password:</label>
                         <input type="password" required />
-                        <button className="but" type="submit"><Link to='/Profile'>Log In</Link></button>
+                        <Link to='/Profile' className='link'>
+                            <button className="login-button" type="submit">Log In</button>
+                        </Link>
                     </form>
                     <h5> Don't have an account?
                         <Link to='/Sign'>
