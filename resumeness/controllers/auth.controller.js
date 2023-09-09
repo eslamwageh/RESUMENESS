@@ -3,15 +3,17 @@ const jwt = require("jsonwebtoken");
 const { User, logInSchema, signUpSchema } = require("../models/User.js");
 const authController = {
     signup: async (req, res) => {
+        console.log("bahebak");
         // Validate the request body against the sign up schema
         const { error } = signUpSchema.validate(req.body, {
             abortEarly: false,
         });
         if (error) {
+            console.log(error);
             return res.status(422).json(error.details);
         }
         try {
-            const { email, password } = req.body;
+            const { fullName, email, password } = req.body;
             // Check if the user already exists
             let user = await User.findOne({ email });
             if (user) {
@@ -23,7 +25,7 @@ const authController = {
             const hashedPassword = await bcrypt.hash(password, 10);
             user = new User({ ...req.body, password: hashedPassword });
             await user.save();
-            res.status(201).json({
+            res.status(200).json({
                 message: "User created successfully",
                 user,
             });
