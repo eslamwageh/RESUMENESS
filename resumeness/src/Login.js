@@ -40,11 +40,9 @@ const Login = () => {
                     <input type="text" onChange={(e) => setEmail(e.target.value)} required />
                     <label>Password:</label>
                     <input type="password" onChange={(e) => setPassword(e.target.value)}required />
-                    <Link to="/Profile" className="link">
                         <button className="login-button" type="submit">
                             Log In
                         </button>
-                    </Link>
                 </form>
                 <h5>
                     {" "}
