@@ -23,12 +23,18 @@ A web application designed to help to create your professional resume and cover 
 
 ## Getting Started
 
+
 To run this project locally, follow these steps:
 
 1. Clone the repository: `git clone [https://github.com/your-username/resume-builder.git](https://github.com/Ashraf-Bahy-Org/RESUMENESS.git)`
 2. Navigate to the project directory: `cd resumeness`
-3. Install the dependencies: `npm install`
-4. Start the development server: `npm start`
+3. Run the app file to get connected to the data base : `node app`
+4. Create a new terminal for the front-end and navigate to the project directory: `cd resumeness`
+5. Install the dependencies: `npm install`
+6. Start the development server: `npm start`
+
+
+
 
 ## Screenshots
 
