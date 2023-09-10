@@ -5,11 +5,31 @@ import { useState } from "react";
 const Resume = () => {
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+
+
+
+    
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
         //    setTimeout(() => {        how to navigate back then to the reqired page ?
         const formData = new FormData(e.target);
         const values = Object.fromEntries(formData.entries());
+        try {
+            await fetch('http://localhost:8080/addcv', {
+              method: 'POST',
+              body: JSON.stringify(values),
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${localStorage.getItem('token')}`, // Assuming you store the token in localStorage
+              },
+            });
+            console.log(values);
+            // Handle successful upload
+          } catch (error) {
+            alert(error);
+            // Handle error
+          }
         navigate("./Preview", {
             state: values,
         });
