@@ -41,37 +41,57 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/auth", authRouter);
 app.post("/addcv", async (req, res) => {
-  // Handle file upload logic here
-  console.log(req.body);
-  const authHeader = req.headers.authorization;
-  const token = authHeader.split(" ")[1];
-  const { cvFile } = req.body;
+    // Handle file upload logic here
+    const authHeader = req.headers.authorization;
+    const token = authHeader.split(" ")[1];
 
-  try {
-      // Verify the token and get the user's id
-      const { id } = jwt.verify(token, process.env.JWT_SECRET);
-      // Get the user from the database
-      const user = await User.findById(id);
-      // Check if the user exists
-      if (!user) {
-          return res.status(404).json({ error: "User not found" });
-      }
-      const cv1 = new Resume({
-          RESUME: cvFile,
-      });
-      // Update the user's CV field with the file information
-      user.resumes.push(cv1);
-      // Save the updated user object
-      console.log(user);
-      await user.save();
-      console.log("Document saved successfully:", user);
+    try {
+        // Verify the token and get the user's id
+        const { id } = jwt.verify(token, process.env.JWT_SECRET);
+        // Get the user from the database
+        const user = await User.findById(id);
+        // Check if the user exists
+        if (!user) {
+            return res.status(404).json({ error: "User not found" });
+        }
+        const cv1 = new Resume(req.body);
+        console.log(cv1);
+        // Update the user's CV field with the file information
+        user.resumes.push(cv1);
+        // Save the updated user object
+        console.log(req.body.name);
+        await user.save();
+        console.log("Document saved successfully:");
 
-      // Return a success response
-      return res.status(200).json({ message: "CV uploaded successfully" });
-  } catch (err) {
-      console.log(err);
-      res.status(401).json({ error: "Invalid token" });
-  }
+        // Return a success response
+        return res.status(200).json({ message: "CV uploaded successfully" });
+    } catch (err) {
+        console.log(err);
+        res.status(401).json({ error: "Invalid token" });
+    }
+});
+
+app.get("/getcvs", async (req, res) => {
+    // Handle file upload logic here
+    const authHeader = req.headers.authorization;
+    const token = authHeader.split(" ")[1];
+
+    try {
+        // Verify the token and get the user's id
+        const { id } = jwt.verify(token, process.env.JWT_SECRET);
+        // Get the user from the database
+        const user = await User.findById(id);
+        // Check if the user exists
+        if (!user) {
+          console.log(error);
+            return res.status(404).json({ error: "User not found" });
+        }
+        // Return a success response
+        return res.status(200).json(user.resumes);
+    } catch (err) {
+        console.log(err);
+        res.status(401).json({ error: "Invalid token" });
+    }
 });
 
 app.get("/", (req, res) => {
