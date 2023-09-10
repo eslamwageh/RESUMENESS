@@ -233,8 +233,6 @@ input {
   margin-top: 5px;
 }
 
-.block {
-}
 
 .boxes {
   width: 900px;
@@ -735,4 +733,12 @@ h5{
 .sign-button:hover,
 .login-button:hover{
   box-shadow: 0px 0px 10px #fff7cc;
+}
+
+.myname{
+  text-align: center;
+  color: white;
+  margin: 7px auto;
+  font-size: 1.2em;
+  text-shadow: 0px 0px 5px #fff7cc;
 }
