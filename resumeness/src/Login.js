@@ -6,6 +6,9 @@ const Login = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const refresh = () => {
+        window.location.reload();
+      };
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -30,6 +33,10 @@ const Login = () => {
                     "An error occurred while creating your account. Please try again."
                 );
         }
+        setTimeout(() => {
+            refresh();
+        }, 200);
+
     };
     return (
         <div className="Login">
