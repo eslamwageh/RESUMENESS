@@ -71,6 +71,37 @@ app.post("/addcv", async (req, res) => {
     }
 });
 
+app.post("/addcl", async (req, res) => {
+  // Handle file upload logic here
+  const authHeader = req.headers.authorization;
+  const token = authHeader.split(" ")[1];
+
+  try {
+      // Verify the token and get the user's id
+      const { id } = jwt.verify(token, process.env.JWT_SECRET);
+      // Get the user from the database
+      const user = await User.findById(id);
+      // Check if the user exists
+      if (!user) {
+          return res.status(404).json({ error: "User not found" });
+      }
+      const cl1 = new CoverLetter(req.body);
+      console.log(cl1);
+      // Update the user's CV field with the file information
+      user.coverLetters.push(cl1);
+      // Save the updated user object
+      console.log(req.body.name);
+      await user.save();
+      console.log("Document saved successfully:");
+
+      // Return a success response
+      return res.status(200).json({ message: "CV uploaded successfully" });
+  } catch (err) {
+      console.log(err);
+      res.status(401).json({ error: "Invalid token" });
+  }
+});
+
 app.get("/getcvs", async (req, res) => {
     // Handle file upload logic here
     const authHeader = req.headers.authorization;
@@ -93,6 +124,56 @@ app.get("/getcvs", async (req, res) => {
         res.status(401).json({ error: "Invalid token" });
     }
 });
+
+// app.post("/delcv", async (req, res) => {
+//   // Handle file upload logic here
+//   const authHeader = req.headers.authorization;
+//   const token = authHeader.split(" ")[1];
+
+//   try {
+//       // Verify the token and get the user's id
+//       const { id } = jwt.verify(token, process.env.JWT_SECRET);
+//       // Get the user from the database
+//       const user = await User.findById(id);
+//       // Check if the user exists
+//       if (!user) {
+//         console.log(error);
+//           return res.status(404).json({ error: "User not found" });
+//       }
+//       user.resumes.splice(req.body, 1);
+//       await user.save();
+//       console.log("Document saved successfully:");
+//       // Return a success response
+//       return res.status(200).json(user.resumes);
+//   } catch (err) {
+//       console.log(err);
+//       res.status(401).json({ error: "Invalid token" });
+//   }
+// });
+
+app.get("/getcls", async (req, res) => {
+  // Handle file upload logic here
+  const authHeader = req.headers.authorization;
+  const token = authHeader.split(" ")[1];
+
+  try {
+      // Verify the token and get the user's id
+      const { id } = jwt.verify(token, process.env.JWT_SECRET);
+      // Get the user from the database
+      const user = await User.findById(id);
+      // Check if the user exists
+      if (!user) {
+        console.log(error);
+          return res.status(404).json({ error: "User not found" });
+      }
+      // Return a success response
+      return res.status(200).json(user.coverLetters);
+  } catch (err) {
+      console.log(err);
+      res.status(401).json({ error: "Invalid token" });
+  }
+});
+
 
 app.get("/", (req, res) => {
     res.send("Hello World!");

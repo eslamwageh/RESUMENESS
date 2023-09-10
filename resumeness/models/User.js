@@ -64,9 +64,18 @@ const resumeSchema = new Schema({
 
   // Define the schema for the user collection
 const CoverSchema = new Schema({
-    COVERLETTER: {
-        type: mongoose.Schema.Types.Mixed,
-    }
+    name: String,
+    address: String,
+    number: String,
+    email: String,
+    LI: String,
+    title: String,
+    date: String,
+    recname: String,
+    rectitle: String,
+    compname: String,
+    comploc: String,
+    para: String,
   });
 
 const userSchema = new Schema({
