@@ -1,5 +1,4 @@
 import coverletter from "./photos/coverletter.webp";
-import coverletter2 from "./RESUMENESS/photos/coverletter.webp";
 const About = () => {
     return (
         <div className="about">
