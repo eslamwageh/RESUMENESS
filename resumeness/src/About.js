@@ -1,4 +1,3 @@
-import coverletter from "./photos/coverletter.webp";
 const About = () => {
     return (
         <div className="about">
@@ -19,10 +18,13 @@ const About = () => {
                     </p>
                 </div>
             </div>
-            <img src={coverletter} alt="tmpimg" />
-            <img src="/RESUMENESS/photos/coverletter.webp" alt="tmpimg" />
-            <img src="./RESUMENESS/photos/coverletter.webp" alt="tmpimg" />
-            <img src="RESUMENESS/photos/coverletter.webp" alt="tmpimg" />
+            <img src="./photos/coverletter.webp" alt="tmpimg" />
+            <img src="./cafe.jpg" alt="tmpimg" />
+            <img src="/cafe.jpg" alt="tmpimg" />
+            <img src="./RESUMENESS/cafe.jpg" alt="tmpimg" />
+            <img src="/RESUMENESS/cafe.jpg" alt="tmpimg" />
+            <img src="RESUMENESS/cafe.jpg" alt="tmpimg" />
+            <img src="cafe.jpg" alt="tmpimg" />
         </div>
     );
 };
