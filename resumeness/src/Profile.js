@@ -56,16 +56,16 @@ const Profile = () => {
                             cvs.map((cv, index) => (
                                 <div key={index} onClick={() => {navigate ('/Resume/Preview', {state: cv})}}>
                                     <img
-                                        src="./photos/CV template2.jpg"
+                                        src="./Photos/CV template2.jpg"
                                         alt="tmpimg"
                                     />
                                     <p className="myname">{cv.name}</p>
                                 </div>
                             ))}
-                        {/* <img src="./photos/CV template2.jpg" alt="tmpimg" />
-                        <img src="./photos/CV template2.jpg" alt="tmpimg" />
-                        <img src="./photos/CV template2.jpg" alt="tmpimg" />
-                        <img src="./photos/CV template2.jpg" alt="tmpimg" /> */}
+                        {/* <img src="./Photos/CV template2.jpg" alt="tmpimg" />
+                        <img src="./Photos/CV template2.jpg" alt="tmpimg" />
+                        <img src="./Photos/CV template2.jpg" alt="tmpimg" />
+                        <img src="./Photos/CV template2.jpg" alt="tmpimg" /> */}
                         <Link to="/Resume">
                             <div className="add">Add CV</div>
                         </Link>

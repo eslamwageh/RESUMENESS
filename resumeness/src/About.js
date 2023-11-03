@@ -1,7 +1,7 @@
 const About = () => {
     return (
         <div className="about">
-            <img src="./photos/CVtemplate2.jpg" alt="tmpimg" />
+            <img src="./Photos/CVtemplate2.jpg" alt="tmpimg" />
             <div className="centerabout">
                 <h1>RESUMENESS</h1>
                 <p>
@@ -18,7 +18,7 @@ const About = () => {
                     </p>
                 </div>
             </div>
-            <img src="./photos/coverletter.jpg" alt="tmpimg" />
+            <img src="./Photos/coverletter.jpg" alt="tmpimg" />
         </div>
     );
 };

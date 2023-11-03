@@ -10,15 +10,15 @@ const Home = () => {
             <div className="view">
                 <img
                     className="first"
-                    src="./RESUMENESS/photos/CV template2.jpg"
+                    src="./RESUMENESS/Photos/CV template2.jpg"
                     alt="tmpimg"
                 />
                 <img
                     className="second"
-                    src="photos/coverletter.webp"
+                    src="Photos/coverletter.webp"
                     alt="tmpimg"
                 />
-                <img className="third" src="./photos/resume.jpg" alt="tmpimg" />
+                <img className="third" src="./Photos/resume.jpg" alt="tmpimg" />
             </div>
             <Link to="/Login">
                 <button className="but" type="submit">
