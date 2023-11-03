@@ -1,7 +1,7 @@
 const About = () => {
     return (
         <div className="about">
-            <img src="./RESUMENESS/photos/CV template2.jpg" alt="tmpimg" />
+            <img src="./photos/CV template2.jpg" alt="tmpimg" />
             <div className="centerabout">
                 <h1>RESUMENESS</h1>
                 <p>
@@ -18,6 +18,9 @@ const About = () => {
                     </p>
                 </div>
             </div>
+            <img src="/photos/coverletter.webp" alt="tmpimg" />
+            <img src="/RESUMENESS/photos/coverletter.webp" alt="tmpimg" />
+            <img src="./RESUMENESS/photos/coverletter.webp" alt="tmpimg" />
             <img src="RESUMENESS/photos/coverletter.webp" alt="tmpimg" />
         </div>
     );
