@@ -2,7 +2,7 @@ import coverletter from "./photos/coverletter.webp";
 const About = () => {
     return (
         <div className="about">
-            <img src={coverletter2} alt="tmpimg" />
+            <img src="./photos/CV template2.jpg" alt="tmpimg" />
             <div className="centerabout">
                 <h1>RESUMENESS</h1>
                 <p>
