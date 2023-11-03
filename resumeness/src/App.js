@@ -19,7 +19,7 @@ function App() {
             <div className="App">
                 <Navbar />
                 <Routes>
-                    <Route exact path="RESUMENESS/" element={<Home />}></Route>
+                    <Route exact path="/RESUMENESS" element={<Home />}></Route>
                     <Route
                         exact
                         path="RESUMENESS/Login"
