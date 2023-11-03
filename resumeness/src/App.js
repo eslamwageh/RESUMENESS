@@ -20,44 +20,21 @@ function App() {
                 <Navbar />
                 <Routes>
                     <Route exact path="/RESUMENESS" element={<Home />}></Route>
+                    <Route exact path="/Login" element={<Login />}></Route>
+                    <Route exact path="/Sign" element={<Sign />}></Route>
+                    <Route exact path="/Profile" element={<Profile />}></Route>
+                    <Route exact path="/Resume" element={<Resume />}></Route>
                     <Route
                         exact
-                        path="RESUMENESS/Login"
-                        element={<Login />}
-                    ></Route>
-                    <Route
-                        exact
-                        path="RESUMENESS/Sign"
-                        element={<Sign />}
-                    ></Route>
-                    <Route
-                        exact
-                        path="RESUMENESS/Profile"
-                        element={<Profile />}
-                    ></Route>
-                    <Route
-                        exact
-                        path="RESUMENESS/Resume"
-                        element={<Resume />}
-                    ></Route>
-                    <Route
-                        exact
-                        path="RESUMENESS/Coverletter"
+                        path="/Coverletter"
                         element={<Coverletter />}
                     ></Route>
                     <Route
-                        path="RESUMENESS/Coverletter/Previewcoverletter"
+                        path="/Coverletter/Previewcoverletter"
                         element={<Coverletterpreview />}
                     ></Route>
-                    <Route
-                        path="RESUMENESS/Resume/Preview"
-                        element={<Preview />}
-                    ></Route>
-                    <Route
-                        exact
-                        path="/RESUMENESS/About"
-                        element={<About />}
-                    ></Route>
+                    <Route path="/Resume/Preview" element={<Preview />}></Route>
+                    <Route path="/About" element={<About />}></Route>
                 </Routes>
             </div>
         </Router>

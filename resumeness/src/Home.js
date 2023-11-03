@@ -10,7 +10,7 @@ const Home = () => {
             <div className="view">
                 <img
                     className="first"
-                    src="./RESUMENESS/Photos/CV template2.jpg"
+                    src="./Photos/CVtemplate2.jpg"
                     alt="tmpimg"
                 />
                 <img
