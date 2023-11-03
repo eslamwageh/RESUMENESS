@@ -1,8 +1,9 @@
 import coverletter from "./photos/coverletter.webp";
+import coverletter2 from "./RESUMENESS/photos/coverletter.webp";
 const About = () => {
     return (
         <div className="about">
-            <img src="./photos/CV template2.jpg" alt="tmpimg" />
+            <img src={coverletter2} alt="tmpimg" />
             <div className="centerabout">
                 <h1>RESUMENESS</h1>
                 <p>
