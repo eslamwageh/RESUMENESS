@@ -20,7 +20,7 @@ const Navbar = () => {
                 <Link to={linkprof}>Profile</Link>
                 <Link to={linkres}>Resume</Link>
                 <Link to={linkcov}>Cover Letter</Link>
-                <Link to="/About">About</Link>
+                <Link to="/RESUMENESS/About">About</Link>
                 <Link onClick={handleLogout}>Logout</Link>
             </div>
         </div>
