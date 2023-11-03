@@ -53,7 +53,11 @@ function App() {
                         path="RESUMENESS/Resume/Preview"
                         element={<Preview />}
                     ></Route>
-                    <Route path="/RESUMENESS/About" element={<About />}></Route>
+                    <Route
+                        exact
+                        path="/RESUMENESS/About"
+                        element={<About />}
+                    ></Route>
                 </Routes>
             </div>
         </Router>

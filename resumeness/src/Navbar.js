@@ -16,7 +16,7 @@ const Navbar = () => {
         <div className="navbar">
             <h2>RESUMENESS</h2>
             <div className="nav-pages">
-                <Link to="/">Home</Link>
+                <Link to="/RESUMENESS">Home</Link>
                 <Link to={linkprof}>Profile</Link>
                 <Link to={linkres}>Resume</Link>
                 <Link to={linkcov}>Cover Letter</Link>
